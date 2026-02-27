@@ -1,0 +1,152 @@
+name: Oracle General Ledger APIs
+description: Collection of REST APIs for Oracle Cloud ERP General Ledger operations
+url: https://docs.oracle.com/en/cloud/saas/financials/
+image: https://www.oracle.com/a/ocom/img/oracle-logo.svg
+created: 2024-01-15 00:00:00+00:00
+modified: 2024-01-15 00:00:00+00:00
+apis:
+- name: Oracle ERP Cloud General Ledger REST API
+  description: REST API for managing general ledger operations including journals, balances, accounts, and financial reporting
+  image: https://www.oracle.com/a/ocom/img/oracle-cloud-logo.svg
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/23r3/farfa/
+  baseURL: https://your-instance.fa.us2.oraclecloud.com/fscmRestApi/resources/11.13.18.05
+  version: 11.13.18.05
+  tags:
+  - ERP
+  - Finance
+  - Accounting
+  - General Ledger
+  - Cloud
+  properties:
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/23r3/farfa/api-general-ledger.html
+  - type: OpenAPI
+    url: https://docs.oracle.com/en/cloud/saas/financials/23r3/farfa/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/23r3/farfa/Authentication.html
+  contact:
+  - type: Support
+    url: https://support.oracle.com
+  - type: Sales
+    url: https://www.oracle.com/corporate/contact/
+  endpoints:
+  - name: Ledgers
+    description: Manage general ledgers and ledger configurations
+    methods:
+    - GET
+    - POST
+    - PATCH
+    - DELETE
+    url: /ledgers
+  - name: Journals
+    description: Create, update, and manage journal entries
+    methods:
+    - GET
+    - POST
+    - PATCH
+    - DELETE
+    url: /journals
+  - name: Journal Batches
+    description: Manage journal batches
+    methods:
+    - GET
+    - POST
+    - PATCH
+    - DELETE
+    url: /journalBatches
+  - name: Journal Lines
+    description: Manage individual journal entry lines
+    methods:
+    - GET
+    - POST
+    - PATCH
+    - DELETE
+    url: /journalLines
+  - name: Account Combinations
+    description: Retrieve and manage chart of accounts combinations
+    methods:
+    - GET
+    - POST
+    url: /accountCombinations
+  - name: Balances
+    description: Query account balances and balance details
+    methods:
+    - GET
+    url: /balances
+  - name: Period Status
+    description: Manage accounting period status
+    methods:
+    - GET
+    - PATCH
+    url: /periodStatuses
+  - name: Budget Balances
+    description: Retrieve and manage budget balances
+    methods:
+    - GET
+    - POST
+    - PATCH
+    url: /budgetBalances
+  - name: Currency Rates
+    description: Manage currency exchange rates
+    methods:
+    - GET
+    - POST
+    - PATCH
+    url: /currencyRates
+  - name: Revaluation
+    description: Execute foreign currency revaluation
+    methods:
+    - POST
+    url: /revaluations
+  - name: Allocations
+    description: Manage allocation rules and execution
+    methods:
+    - GET
+    - POST
+    url: /allocations
+  - name: Financial Reports
+    description: Access financial reporting data
+    methods:
+    - GET
+    url: /financialReports
+maintainers:
+- name: Oracle Corporation
+  email: cloud-feedback_ww@oracle.com
+  url: https://www.oracle.com
+authentication:
+- type: OAuth 2.0
+  description: OAuth 2.0 authentication for secure API access
+- type: Basic Authentication
+  description: Username and password authentication (legacy)
+rateLimits:
+  description: Rate limits vary by subscription tier and instance configuration
+  url: https://docs.oracle.com/en/cloud/saas/financials/23r3/farfa/RateLimiting.html
+errorCodes:
+- code: 400
+  description: Bad Request
+- code: 401
+  description: Unauthorized
+- code: 403
+  description: Forbidden
+- code: 404
+  description: Not Found
+- code: 500
+  description: Internal Server Error
+commonHeaders:
+- name: Authorization
+  description: OAuth token or Basic auth credentials
+  required: true
+- name: Content-Type
+  description: application/json or application/vnd.oracle.adf.resourceitem+json
+  required: true
+- name: REST-Framework-Version
+  description: API version number
+  required: false
+relatedAPIs:
+- Oracle ERP Cloud Accounts Payable API
+- Oracle ERP Cloud Accounts Receivable API
+- Oracle ERP Cloud Fixed Assets API
+- Oracle ERP Cloud Cash Management API
+license:
+  name: Oracle Technology Network License Agreement
+  url: https://www.oracle.com/downloads/licenses/standard-license.html
