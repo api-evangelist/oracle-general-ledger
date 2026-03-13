@@ -1,152 +1,360 @@
 name: Oracle General Ledger APIs
-description: Collection of REST APIs for Oracle Cloud ERP General Ledger operations
-url: https://docs.oracle.com/en/cloud/saas/financials/
+description: >-
+  Oracle Fusion Cloud General Ledger provides REST APIs for managing core
+  financial accounting operations within Oracle Cloud ERP. These APIs enable
+  programmatic access to journal entries, ledger balances, accounting periods,
+  currency rates, intercompany transactions, budgetary controls, and chart of
+  accounts configurations used by finance teams for enterprise accounting,
+  reporting, and close processes.
 image: https://www.oracle.com/a/ocom/img/oracle-logo.svg
-created: 2024-01-15 00:00:00+00:00
-modified: 2024-01-15 00:00:00+00:00
+url: https://raw.githubusercontent.com/api-evangelist/oracle-general-ledger/refs/heads/main/apis.yml
+created: '2024-01-15'
+modified: '2026-03-04'
+specificationVersion: '0.18'
+tags:
+- General Ledger
+- ERP
+- Finance
+- Accounting
+- Journals
+- Balances
+- Cloud
 apis:
-- name: Oracle ERP Cloud General Ledger REST API
-  description: REST API for managing general ledger operations including journals, balances, accounts, and financial reporting
-  image: https://www.oracle.com/a/ocom/img/oracle-cloud-logo.svg
-  humanURL: https://docs.oracle.com/en/cloud/saas/financials/23r3/farfa/
-  baseURL: https://your-instance.fa.us2.oraclecloud.com/fscmRestApi/resources/11.13.18.05
-  version: 11.13.18.05
+- name: Oracle General Ledger Journal Batches REST API
+  description: >-
+    REST API for managing journal batches in Oracle Fusion Cloud General Ledger.
+    The journal batches resource allows viewing journal batches, updating batch
+    completion status and reversal attributes, and deleting journal batches.
+    Child resources provide access to journal headers, journal lines,
+    attachments, action logs, descriptive flexfields, and error details.
+  image: https://www.oracle.com/a/ocom/img/oracle-logo.svg
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05
   tags:
-  - ERP
-  - Finance
-  - Accounting
+  - Journals
+  - Journal Batches
   - General Ledger
-  - Cloud
+  - Accounting
   properties:
   - type: Documentation
-    url: https://docs.oracle.com/en/cloud/saas/financials/23r3/farfa/api-general-ledger.html
-  - type: OpenAPI
-    url: https://docs.oracle.com/en/cloud/saas/financials/23r3/farfa/
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Reference
+    url: https://docs.oracle.com/en/cloud/saas/financials/25b/farfa/api-journal-batches.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
   - type: Authentication
-    url: https://docs.oracle.com/en/cloud/saas/financials/23r3/farfa/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
+  - type: Change Log
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
   contact:
-  - type: Support
+  - FN: Oracle Support
+    email: support@oracle.com
     url: https://support.oracle.com
-  - type: Sales
-    url: https://www.oracle.com/corporate/contact/
-  endpoints:
-  - name: Ledgers
-    description: Manage general ledgers and ledger configurations
-    methods:
-    - GET
-    - POST
-    - PATCH
-    - DELETE
-    url: /ledgers
-  - name: Journals
-    description: Create, update, and manage journal entries
-    methods:
-    - GET
-    - POST
-    - PATCH
-    - DELETE
-    url: /journals
-  - name: Journal Batches
-    description: Manage journal batches
-    methods:
-    - GET
-    - POST
-    - PATCH
-    - DELETE
-    url: /journalBatches
-  - name: Journal Lines
-    description: Manage individual journal entry lines
-    methods:
-    - GET
-    - POST
-    - PATCH
-    - DELETE
-    url: /journalLines
-  - name: Account Combinations
-    description: Retrieve and manage chart of accounts combinations
-    methods:
-    - GET
-    - POST
-    url: /accountCombinations
-  - name: Balances
-    description: Query account balances and balance details
-    methods:
-    - GET
-    url: /balances
-  - name: Period Status
-    description: Manage accounting period status
-    methods:
-    - GET
-    - PATCH
-    url: /periodStatuses
-  - name: Budget Balances
-    description: Retrieve and manage budget balances
-    methods:
-    - GET
-    - POST
-    - PATCH
-    url: /budgetBalances
-  - name: Currency Rates
-    description: Manage currency exchange rates
-    methods:
-    - GET
-    - POST
-    - PATCH
-    url: /currencyRates
-  - name: Revaluation
-    description: Execute foreign currency revaluation
-    methods:
-    - POST
-    url: /revaluations
-  - name: Allocations
-    description: Manage allocation rules and execution
-    methods:
-    - GET
-    - POST
-    url: /allocations
-  - name: Financial Reports
-    description: Access financial reporting data
-    methods:
-    - GET
-    url: /financialReports
+- name: Oracle General Ledger Ledger Balances REST API
+  description: >-
+    REST API for querying account balances in Oracle Fusion Cloud General
+    Ledger. The ledger balances resource allows viewing balance amounts for any
+    account combination or accounts defined as part of an account group.
+    Supports finders for account balance by combination, account group balance,
+    and primary key lookup across ledgers, currencies, and accounting periods.
+  image: https://www.oracle.com/a/ocom/img/oracle-logo.svg
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05
+  tags:
+  - Balances
+  - Account Balances
+  - General Ledger
+  - Financial Reporting
+  properties:
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Reference
+    url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/api-ledger-balances.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
+  - type: Change Log
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  contact:
+  - FN: Oracle Support
+    email: support@oracle.com
+    url: https://support.oracle.com
+- name: Oracle General Ledger Accounting Period Status REST API
+  description: >-
+    REST API for viewing accounting period statuses in Oracle Fusion Cloud
+    General Ledger. The accounting period status list of values resource
+    provides period details in a calendar, including ledger identification,
+    period name, and closing status values such as Open, Closed, Future
+    Enterable, Never Opened, Permanently Closed, and Close Pending.
+  image: https://www.oracle.com/a/ocom/img/oracle-logo.svg
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05
+  tags:
+  - Accounting Periods
+  - Period Close
+  - General Ledger
+  - Financial Close
+  properties:
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Reference
+    url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/op-accountingperiodstatuslov-get.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
+  - type: Change Log
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  contact:
+  - FN: Oracle Support
+    email: support@oracle.com
+    url: https://support.oracle.com
+- name: Oracle General Ledger Currency Rates REST API
+  description: >-
+    REST API for retrieving currency exchange rate information in Oracle Fusion
+    Cloud General Ledger. The currency rates resource provides information on
+    currency rates for source and target currency combinations, supporting
+    daily rates, corporate rates, and user-defined rate types used in
+    multi-currency accounting and foreign currency translation.
+  image: https://www.oracle.com/a/ocom/img/oracle-logo.svg
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05
+  tags:
+  - Currency Rates
+  - Foreign Currency
+  - Exchange Rates
+  - General Ledger
+  properties:
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
+  - type: Change Log
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  contact:
+  - FN: Oracle Support
+    email: support@oracle.com
+    url: https://support.oracle.com
+- name: Oracle General Ledger Ledger Options REST API
+  description: >-
+    REST API for accessing ledger configuration options in Oracle Fusion Cloud
+    General Ledger. The ledger options resource provides access to ledger setup
+    details including chart of accounts identifiers, balancing segment names,
+    accounted period types, budgetary control settings, and document numbering
+    configurations used to define how a ledger processes accounting data.
+  image: https://www.oracle.com/a/ocom/img/oracle-logo.svg
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05
+  tags:
+  - Ledger Options
+  - Ledger Setup
+  - Chart of Accounts
+  - General Ledger
+  properties:
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Reference
+    url: https://docs.oracle.com/en/cloud/saas/financials/24c/farfa/op-fedledgeroptions-get.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
+  - type: Change Log
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  contact:
+  - FN: Oracle Support
+    email: support@oracle.com
+    url: https://support.oracle.com
+- name: Oracle General Ledger Budgetary Control REST API
+  description: >-
+    REST API for managing budgetary controls in Oracle Fusion Cloud General
+    Ledger. The budgetary control resources enable viewing budget execution
+    controls, budget impact results, and control budget periods. These APIs
+    support organizations that use budget accounts to control expenditures
+    against defined appropriation limits and enterprise performance management
+    budget transactions.
+  image: https://www.oracle.com/a/ocom/img/oracle-logo.svg
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05
+  tags:
+  - Budgetary Control
+  - Budgets
+  - Appropriations
+  - General Ledger
+  properties:
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Reference
+    url: https://docs.oracle.com/en/cloud/saas/financials/25d/farfa/op-fedbudgetexecutioncontrols-get.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
+  - type: Change Log
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  contact:
+  - FN: Oracle Support
+    email: support@oracle.com
+    url: https://support.oracle.com
+- name: Oracle General Ledger Chart of Accounts Filters REST API
+  description: >-
+    REST API for managing chart of accounts filter configurations in Oracle
+    Fusion Cloud General Ledger. The chart of accounts filters resource returns
+    filter ID values for chart of accounts filter criteria, enabling control
+    over which account combinations are available for journal entry and
+    financial reporting based on defined filter rules and criteria.
+  image: https://www.oracle.com/a/ocom/img/oracle-logo.svg
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05
+  tags:
+  - Chart of Accounts
+  - Account Filters
+  - Account Combinations
+  - General Ledger
+  properties:
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
+  - type: Change Log
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  contact:
+  - FN: Oracle Support
+    email: support@oracle.com
+    url: https://support.oracle.com
+- name: Oracle Intercompany Transactions REST API
+  description: >-
+    REST API for managing intercompany transactions in Oracle Fusion Cloud
+    Financials. The intercompany resources support agreement-based intercompany
+    transactions, intercompany transaction source documents, intercompany
+    agreements with transfer authorization groups, and intercompany
+    organization lookups. These APIs enable automated cross-charge processing
+    and intercompany balancing within the general ledger.
+  image: https://www.oracle.com/a/ocom/img/oracle-logo.svg
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05
+  tags:
+  - Intercompany
+  - Cross-Charge
+  - Transfer Pricing
+  - General Ledger
+  properties:
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Reference
+    url: https://docs.oracle.com/en/cloud/saas/financials/25c/farfa/automated-intercompany-cross-charge-of-payables-invoices-using-rest-apis.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
+  - type: Change Log
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  contact:
+  - FN: Oracle Support
+    email: support@oracle.com
+    url: https://support.oracle.com
+- name: Oracle Joint Venture General Ledger Transactions REST API
+  description: >-
+    REST API for managing joint venture general ledger transactions in Oracle
+    Fusion Cloud Financials. The joint venture GL transactions and joint
+    venture subledger transactions resources enable viewing and updating
+    transactions related to joint venture accounting, supporting partnership
+    accounting workflows that integrate with the general ledger.
+  image: https://www.oracle.com/a/ocom/img/oracle-logo.svg
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05
+  tags:
+  - Joint Venture
+  - Subledger Accounting
+  - Partnership Accounting
+  - General Ledger
+  properties:
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Reference
+    url: https://docs.oracle.com/en/cloud/saas/financials/24c/farfa/op-jointventuregltransactions-get.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
+  - type: Change Log
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  contact:
+  - FN: Oracle Support
+    email: support@oracle.com
+    url: https://support.oracle.com
+- name: Oracle General Ledger ERP Integrations REST API
+  description: >-
+    REST API for automating bulk data import and export flows with Oracle
+    Fusion Cloud General Ledger. The ERP integrations resource supports loading
+    journal data files, submitting Enterprise Scheduler Service jobs for
+    journal import, and running the accounting engine for subledger journal
+    processing. Also provides access to ERP business events and ERP process
+    status details.
+  image: https://www.oracle.com/a/ocom/img/oracle-logo.svg
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05
+  tags:
+  - ERP Integration
+  - Data Import
+  - Journal Import
+  - General Ledger
+  properties:
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Reference
+    url: https://docs.oracle.com/en/cloud/saas/financials/25b/farfa/op-erpintegrations-operationname-get.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
+  - type: Change Log
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  contact:
+  - FN: Oracle Support
+    email: support@oracle.com
+    url: https://support.oracle.com
+common:
+- type: Portal
+  url: https://docs.oracle.com/en/cloud/saas/financials/26a/api.html
+- type: Documentation
+  url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+- type: GettingStarted
+  url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
+- type: Authentication
+  url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
+- type: Change Log
+  url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+- type: Support
+  url: https://support.oracle.com
+- type: Status
+  url: https://ocistatus.oraclecloud.com/
+- type: TermsOfService
+  url: https://www.oracle.com/corporate/contracts/cloud-services/
+- type: PrivacyPolicy
+  url: https://www.oracle.com/legal/privacy/
+- type: Website
+  url: https://www.oracle.com/erp/general-ledger/
+- type: Sign Up
+  url: https://www.oracle.com/cloud/free/
+- type: Login
+  url: https://cloud.oracle.com/
+- type: Blog
+  url: https://blogs.oracle.com/cloud-infrastructure/
+- type: GitHubOrganization
+  url: https://github.com/oracle
+- type: Community
+  url: https://community.oracle.com/customerconnect/
+- type: Implementation Guide
+  url: https://docs.oracle.com/en/cloud/saas/financials/26a/faigl/index.html
+- type: User Guide
+  url: https://docs.oracle.com/en/cloud/saas/financials/26a/faugl/index.html
 maintainers:
-- name: Oracle Corporation
-  email: cloud-feedback_ww@oracle.com
-  url: https://www.oracle.com
-authentication:
-- type: OAuth 2.0
-  description: OAuth 2.0 authentication for secure API access
-- type: Basic Authentication
-  description: Username and password authentication (legacy)
-rateLimits:
-  description: Rate limits vary by subscription tier and instance configuration
-  url: https://docs.oracle.com/en/cloud/saas/financials/23r3/farfa/RateLimiting.html
-errorCodes:
-- code: 400
-  description: Bad Request
-- code: 401
-  description: Unauthorized
-- code: 403
-  description: Forbidden
-- code: 404
-  description: Not Found
-- code: 500
-  description: Internal Server Error
-commonHeaders:
-- name: Authorization
-  description: OAuth token or Basic auth credentials
-  required: true
-- name: Content-Type
-  description: application/json or application/vnd.oracle.adf.resourceitem+json
-  required: true
-- name: REST-Framework-Version
-  description: API version number
-  required: false
-relatedAPIs:
-- Oracle ERP Cloud Accounts Payable API
-- Oracle ERP Cloud Accounts Receivable API
-- Oracle ERP Cloud Fixed Assets API
-- Oracle ERP Cloud Cash Management API
-license:
-  name: Oracle Technology Network License Agreement
-  url: https://www.oracle.com/downloads/licenses/standard-license.html
+- FN: Kin Lane
+  email: kin@apievangelist.com
+  url: https://apievangelist.com
