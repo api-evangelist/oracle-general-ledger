@@ -1,5 +1,5 @@
 aid: oracle-general-ledger
-name: Oracle General Ledger APIs
+name: Oracle General Ledger
 description: >-
   Oracle Fusion Cloud General Ledger provides REST APIs for managing core
   financial accounting operations within Oracle Cloud ERP. These APIs enable
