@@ -1,3 +1,4 @@
+aid: oracle-general-ledger
 name: Oracle General Ledger APIs
 description: >-
   Oracle Fusion Cloud General Ledger provides REST APIs for managing core
@@ -6,11 +7,15 @@ description: >-
   currency rates, intercompany transactions, budgetary controls, and chart of
   accounts configurations used by finance teams for enterprise accounting,
   reporting, and close processes.
-image: https://www.oracle.com/a/ocom/img/oracle-logo.svg
-url: https://raw.githubusercontent.com/api-evangelist/oracle-general-ledger/refs/heads/main/apis.yml
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/oracle-general-ledger/refs/heads/main/apis.yml
 created: '2024-01-15'
-modified: '2026-03-04'
-specificationVersion: '0.18'
+modified: '2026-03-16'
+specificationVersion: '0.19'
 tags:
 - General Ledger
 - ERP
@@ -355,6 +360,5 @@ common:
 - type: User Guide
   url: https://docs.oracle.com/en/cloud/saas/financials/26a/faugl/index.html
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
-  url: https://apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
