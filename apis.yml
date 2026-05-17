@@ -49,7 +49,7 @@ apis:
         url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
       - type: Authentication
         url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
-      - type: Change Log
+      - type: ChangeLog
         url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
     contact:
       - FN: Oracle Support
@@ -79,7 +79,7 @@ apis:
         url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
       - type: Authentication
         url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
-      - type: Change Log
+      - type: ChangeLog
         url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
     contact:
       - FN: Oracle Support
@@ -109,7 +109,7 @@ apis:
         url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
       - type: Authentication
         url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
-      - type: Change Log
+      - type: ChangeLog
         url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
     contact:
       - FN: Oracle Support
@@ -137,7 +137,7 @@ apis:
         url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
       - type: Authentication
         url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
-      - type: Change Log
+      - type: ChangeLog
         url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
     contact:
       - FN: Oracle Support
@@ -167,7 +167,7 @@ apis:
         url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
       - type: Authentication
         url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
-      - type: Change Log
+      - type: ChangeLog
         url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
     contact:
       - FN: Oracle Support
@@ -198,7 +198,7 @@ apis:
         url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
       - type: Authentication
         url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
-      - type: Change Log
+      - type: ChangeLog
         url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
     contact:
       - FN: Oracle Support
@@ -226,7 +226,7 @@ apis:
         url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
       - type: Authentication
         url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
-      - type: Change Log
+      - type: ChangeLog
         url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
     contact:
       - FN: Oracle Support
@@ -257,7 +257,7 @@ apis:
         url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
       - type: Authentication
         url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
-      - type: Change Log
+      - type: ChangeLog
         url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
     contact:
       - FN: Oracle Support
@@ -287,7 +287,7 @@ apis:
         url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
       - type: Authentication
         url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
-      - type: Change Log
+      - type: ChangeLog
         url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
     contact:
       - FN: Oracle Support
@@ -318,7 +318,7 @@ apis:
         url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
       - type: Authentication
         url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
-      - type: Change Log
+      - type: ChangeLog
         url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
     contact:
       - FN: Oracle Support
@@ -333,11 +333,11 @@ common:
     url: https://docs.oracle.com/en/cloud/saas/financials/25a/farfa/Quick_Start.html
   - type: Authentication
     url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/Authentication.html
-  - type: Change Log
+  - type: ChangeLog
     url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
   - type: Support
     url: https://support.oracle.com
-  - type: Status
+  - type: StatusPage
     url: https://ocistatus.oraclecloud.com/
   - type: TermsOfService
     url: https://www.oracle.com/corporate/contracts/cloud-services/
@@ -345,7 +345,7 @@ common:
     url: https://www.oracle.com/legal/privacy/
   - type: Website
     url: https://www.oracle.com/erp/general-ledger/
-  - type: Sign Up
+  - type: SignUp
     url: https://www.oracle.com/cloud/free/
   - type: Login
     url: https://cloud.oracle.com/
