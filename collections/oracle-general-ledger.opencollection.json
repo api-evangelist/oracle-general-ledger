@@ -1,0 +1,360 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle General Ledger REST API",
+    "version": "11.13.18.05"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Journal Batches",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List journal batches",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/journalBatches",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Oracle filter expression."
+              }
+            ]
+          },
+          "docs": "List journal batches"
+        },
+        {
+          "info": {
+            "name": "Get a journal batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/journalBatches/:JournalBatchesUniqID",
+            "params": [
+              {
+                "name": "JournalBatchesUniqID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a journal batch"
+        },
+        {
+          "info": {
+            "name": "Update a journal batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/journalBatches/:JournalBatchesUniqID",
+            "params": [
+              {
+                "name": "JournalBatchesUniqID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a journal batch"
+        },
+        {
+          "info": {
+            "name": "Delete a journal batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/journalBatches/:JournalBatchesUniqID",
+            "params": [
+              {
+                "name": "JournalBatchesUniqID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a journal batch"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Ledger Balances",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List ledger balances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/ledgerBalances",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "finder",
+                "value": "",
+                "type": "query",
+                "description": "Oracle finder name, e.g. `AccountBalanceByCombinationFinder` or\n`AccountGroupBalanceFinder`.\n"
+              }
+            ]
+          },
+          "docs": "List ledger balances"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Currency Rates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List currency rates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/currencyRates",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Oracle filter expression."
+              }
+            ]
+          },
+          "docs": "List currency rates"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Accounting Periods",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List accounting period statuses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/accountingPeriodStatusLOV",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Oracle filter expression."
+              }
+            ]
+          },
+          "docs": "List accounting period statuses"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Ledger Options",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List ledger options",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/fedLedgerOptions",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List ledger options"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Budgetary Control",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List budget execution controls",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/fedBudgetExecutionControls",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List budget execution controls"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Intercompany",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List intercompany transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/intercompanyTransactions",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Oracle filter expression."
+              }
+            ]
+          },
+          "docs": "List intercompany transactions"
+        },
+        {
+          "info": {
+            "name": "Create an intercompany transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/intercompanyTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create an intercompany transaction"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ERP Integrations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Submit an ERP integration operation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/erpintegrations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit operations such as `uploadFileToUCM`, `submitESSJobRequest`,\nor `importBulkData`. The actual operation name is supplied in the\nrequest body's `OperationName` field.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
