@@ -345,7 +345,7 @@ common:
     url: https://www.oracle.com/legal/privacy/
   - type: Website
     url: https://www.oracle.com/erp/general-ledger/
-  - type: SignUp
+  - type: Signup
     url: https://www.oracle.com/cloud/free/
   - type: Login
     url: https://cloud.oracle.com/

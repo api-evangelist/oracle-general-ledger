@@ -2,17 +2,11 @@
   "repo": "oracle-general-ledger",
   "feeds": [
     {
-      "source": "https://blogs.oracle.com/cloud-infrastructure/feed",
-      "error": "HTTPError"
-    },
-    {
-      "source": "https://cloud.oracle.com/",
-      "feed_url": "https://cloud.oracle.com/",
-      "title": "",
+      "source": "https://blogs.oracle.com/cloud-infrastructure/",
       "saved": 0,
-      "method": "none"
+      "error": "HTTP 403 Forbidden"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-06-14T20:42:17Z"
+  "fetched": "2026-06-27T12:58:25Z"
 }
