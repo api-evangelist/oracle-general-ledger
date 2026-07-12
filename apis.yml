@@ -325,6 +325,10 @@ apis:
         email: support@oracle.com
         url: https://support.oracle.com
 common:
+  - type: DomainSecurity
+    url: security/oracle-general-ledger-domain-security.yml
+  - type: Authentication
+    url: authentication/oracle-general-ledger-authentication.yml
   - type: Portal
     url: https://docs.oracle.com/en/cloud/saas/financials/26a/api.html
   - type: Documentation
