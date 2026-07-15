@@ -325,6 +325,8 @@ apis:
         email: support@oracle.com
         url: https://support.oracle.com
 common:
+  - type: AgenticAccess
+    url: agentic-access/oracle-general-ledger-agentic-access.yml
   - type: DomainSecurity
     url: security/oracle-general-ledger-domain-security.yml
   - type: Authentication
