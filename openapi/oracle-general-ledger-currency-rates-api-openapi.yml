@@ -1,0 +1,124 @@
+openapi: 3.1.0
+info:
+  title: Oracle General Ledger REST Accounting Periods Currency Rates API
+  description: 'Oracle Fusion Cloud General Ledger REST API. Resources are exposed
+
+    under `/fscmRestApi/resources/11.13.18.05/{resource}` on each
+
+    customer''s Oracle Cloud instance. Authentication uses HTTP Basic
+
+    Authentication or OAuth 2.0 Bearer tokens.
+
+
+    This spec documents the General Ledger surface: journal batches,
+
+    ledger balances, currency rates, accounting period status, ledger
+
+    options, chart of accounts filters, budgetary control, intercompany
+
+    transactions, and ERP integrations.
+
+    '
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+servers:
+- url: https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05
+  description: Customer Oracle Cloud instance.
+  variables:
+    instance:
+      default: example
+      description: Customer-specific Oracle Cloud instance.
+security:
+- basicAuth: []
+- bearerAuth: []
+tags:
+- name: Currency Rates
+paths:
+  /currencyRates:
+    get:
+      tags:
+      - Currency Rates
+      summary: List currency rates
+      operationId: listCurrencyRates
+      parameters:
+      - $ref: '#/components/parameters/Limit'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Q'
+      responses:
+        '200':
+          description: Currency rates collection.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceCollection'
+components:
+  parameters:
+    Offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    Q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Oracle filter expression.
+    Limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+  schemas:
+    ResourceCollection:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        count:
+          type: integer
+        hasMore:
+          type: boolean
+        limit:
+          type: integer
+        offset:
+          type: integer
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+    Link:
+      type: object
+      properties:
+        rel:
+          type: string
+        href:
+          type: string
+        name:
+          type: string
+        kind:
+          type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication with Oracle Cloud user credentials.
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: OAuth 2.0 Bearer token from Oracle IDCS / IAM.
+externalDocs:
+  description: Oracle General Ledger REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html

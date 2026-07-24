@@ -1,0 +1,111 @@
+openapi: 3.1.0
+info:
+  title: Oracle General Ledger REST Accounting Periods ERP Integrations API
+  description: 'Oracle Fusion Cloud General Ledger REST API. Resources are exposed
+
+    under `/fscmRestApi/resources/11.13.18.05/{resource}` on each
+
+    customer''s Oracle Cloud instance. Authentication uses HTTP Basic
+
+    Authentication or OAuth 2.0 Bearer tokens.
+
+
+    This spec documents the General Ledger surface: journal batches,
+
+    ledger balances, currency rates, accounting period status, ledger
+
+    options, chart of accounts filters, budgetary control, intercompany
+
+    transactions, and ERP integrations.
+
+    '
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+servers:
+- url: https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05
+  description: Customer Oracle Cloud instance.
+  variables:
+    instance:
+      default: example
+      description: Customer-specific Oracle Cloud instance.
+security:
+- basicAuth: []
+- bearerAuth: []
+tags:
+- name: ERP Integrations
+paths:
+  /erpintegrations:
+    post:
+      tags:
+      - ERP Integrations
+      summary: Submit an ERP integration operation
+      description: 'Submit operations such as `uploadFileToUCM`, `submitESSJobRequest`,
+
+        or `importBulkData`. The actual operation name is supplied in the
+
+        request body''s `OperationName` field.
+
+        '
+      operationId: submitErpIntegration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - OperationName
+              properties:
+                OperationName:
+                  type: string
+                  description: 'e.g. `uploadFileToUCM`, `submitESSJobRequest`,
+
+                    `submitImportActivity`, `getESSJobStatus`.
+
+                    '
+              additionalProperties: true
+      responses:
+        '201':
+          description: Operation accepted.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  responses:
+    Unauthorized:
+      description: Missing or invalid credentials.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          type: string
+        o:errorCode:
+          type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication with Oracle Cloud user credentials.
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: OAuth 2.0 Bearer token from Oracle IDCS / IAM.
+externalDocs:
+  description: Oracle General Ledger REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
