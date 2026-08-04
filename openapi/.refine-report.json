@@ -1,0 +1,28 @@
+{
+  "provider": "oracle-general-ledger",
+  "sources": [
+    "oracle-general-ledger-accounting-periods-api-openapi.yml",
+    "oracle-general-ledger-budgetary-control-api-openapi.yml",
+    "oracle-general-ledger-currency-rates-api-openapi.yml",
+    "oracle-general-ledger-erp-integrations-api-openapi.yml",
+    "oracle-general-ledger-intercompany-api-openapi.yml",
+    "oracle-general-ledger-journal-batches-api-openapi.yml",
+    "oracle-general-ledger-ledger-balances-api-openapi.yml",
+    "oracle-general-ledger-ledger-options-api-openapi.yml"
+  ],
+  "outputs": [
+    "oracle-general-ledger-accounting-periods-api-openapi.yml",
+    "oracle-general-ledger-budgetary-control-api-openapi.yml",
+    "oracle-general-ledger-currency-rates-api-openapi.yml",
+    "oracle-general-ledger-erp-integrations-api-openapi.yml",
+    "oracle-general-ledger-intercompany-api-openapi.yml",
+    "oracle-general-ledger-journal-batches-api-openapi.yml",
+    "oracle-general-ledger-ledger-balances-api-openapi.yml",
+    "oracle-general-ledger-ledger-options-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -1,0 +1,340 @@
+openapi: 3.1.0
+info:
+  title: Oracle General Ledger REST API
+  description: |
+    Oracle Fusion Cloud General Ledger REST API. Resources are exposed
+    under `/fscmRestApi/resources/11.13.18.05/{resource}` on each
+    customer's Oracle Cloud instance. Authentication uses HTTP Basic
+    Authentication or OAuth 2.0 Bearer tokens.
+
+    This spec documents the General Ledger surface: journal batches,
+    ledger balances, currency rates, accounting period status, ledger
+    options, chart of accounts filters, budgetary control, intercompany
+    transactions, and ERP integrations.
+  version: "11.13.18.05"
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+servers:
+  - url: https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05
+    description: Customer Oracle Cloud instance.
+    variables:
+      instance:
+        default: example
+        description: Customer-specific Oracle Cloud instance.
+security:
+  - basicAuth: []
+  - bearerAuth: []
+tags:
+  - name: Journal Batches
+  - name: Ledger Balances
+  - name: Currency Rates
+  - name: Accounting Periods
+  - name: Ledger Options
+  - name: Budgetary Control
+  - name: Intercompany
+  - name: ERP Integrations
+paths:
+  /journalBatches:
+    get:
+      tags: [Journal Batches]
+      summary: List journal batches
+      operationId: listJournalBatches
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - $ref: '#/components/parameters/Q'
+      responses:
+        "200":
+          description: Journal batches collection.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceCollection'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+  /journalBatches/{JournalBatchesUniqID}:
+    parameters:
+      - name: JournalBatchesUniqID
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags: [Journal Batches]
+      summary: Get a journal batch
+      operationId: getJournalBatch
+      responses:
+        "200":
+          description: Journal batch resource.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+    patch:
+      tags: [Journal Batches]
+      summary: Update a journal batch
+      operationId: updateJournalBatch
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Updated journal batch.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+    delete:
+      tags: [Journal Batches]
+      summary: Delete a journal batch
+      operationId: deleteJournalBatch
+      responses:
+        "204":
+          description: Deleted.
+  /ledgerBalances:
+    get:
+      tags: [Ledger Balances]
+      summary: List ledger balances
+      operationId: listLedgerBalances
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - name: finder
+          in: query
+          required: false
+          schema:
+            type: string
+          description: |
+            Oracle finder name, e.g. `AccountBalanceByCombinationFinder` or
+            `AccountGroupBalanceFinder`.
+      responses:
+        "200":
+          description: Ledger balances collection.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceCollection'
+  /currencyRates:
+    get:
+      tags: [Currency Rates]
+      summary: List currency rates
+      operationId: listCurrencyRates
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - $ref: '#/components/parameters/Q'
+      responses:
+        "200":
+          description: Currency rates collection.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceCollection'
+  /accountingPeriodStatusLOV:
+    get:
+      tags: [Accounting Periods]
+      summary: List accounting period statuses
+      operationId: listAccountingPeriodStatus
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - $ref: '#/components/parameters/Q'
+      responses:
+        "200":
+          description: Accounting period status list of values.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceCollection'
+  /fedLedgerOptions:
+    get:
+      tags: [Ledger Options]
+      summary: List ledger options
+      operationId: listLedgerOptions
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+      responses:
+        "200":
+          description: Ledger options collection.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceCollection'
+  /fedBudgetExecutionControls:
+    get:
+      tags: [Budgetary Control]
+      summary: List budget execution controls
+      operationId: listBudgetExecutionControls
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+      responses:
+        "200":
+          description: Budget execution controls collection.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceCollection'
+  /intercompanyTransactions:
+    get:
+      tags: [Intercompany]
+      summary: List intercompany transactions
+      operationId: listIntercompanyTransactions
+      parameters:
+        - $ref: '#/components/parameters/Limit'
+        - $ref: '#/components/parameters/Offset'
+        - $ref: '#/components/parameters/Q'
+      responses:
+        "200":
+          description: Intercompany transactions collection.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceCollection'
+    post:
+      tags: [Intercompany]
+      summary: Create an intercompany transaction
+      operationId: createIntercompanyTransaction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "201":
+          description: Created.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+  /erpintegrations:
+    post:
+      tags: [ERP Integrations]
+      summary: Submit an ERP integration operation
+      description: |
+        Submit operations such as `uploadFileToUCM`, `submitESSJobRequest`,
+        or `importBulkData`. The actual operation name is supplied in the
+        request body's `OperationName` field.
+      operationId: submitErpIntegration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [OperationName]
+              properties:
+                OperationName:
+                  type: string
+                  description: |
+                    e.g. `uploadFileToUCM`, `submitESSJobRequest`,
+                    `submitImportActivity`, `getESSJobStatus`.
+              additionalProperties: true
+      responses:
+        "201":
+          description: Operation accepted.
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication with Oracle Cloud user credentials.
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: OAuth 2.0 Bearer token from Oracle IDCS / IAM.
+  parameters:
+    Limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    Offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    Q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+      description: Oracle filter expression.
+  responses:
+    Unauthorized:
+      description: Missing or invalid credentials.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+  schemas:
+    ResourceCollection:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        count:
+          type: integer
+        hasMore:
+          type: boolean
+        limit:
+          type: integer
+        offset:
+          type: integer
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/Link'
+    Link:
+      type: object
+      properties:
+        rel:
+          type: string
+        href:
+          type: string
+        name:
+          type: string
+        kind:
+          type: string
+    ErrorResponse:
+      type: object
+      properties:
+        title:
+          type: string
+        status:
+          type: integer
+        detail:
+          type: string
+        "o:errorCode":
+          type: string
+externalDocs:
+  description: Oracle General Ledger REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
