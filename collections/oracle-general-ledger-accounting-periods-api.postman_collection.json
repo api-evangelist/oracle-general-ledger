@@ -1,0 +1,173 @@
+{
+  "item": [
+    {
+      "id": "e97f5469-1ce2-4906-8530-1f0153fbcb42",
+      "name": "Accounting Periods",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2486b80e-0e5d-43b3-a9c0-81c6bea6d92f",
+          "name": "List accounting period statuses",
+          "request": {
+            "name": "List accounting period statuses",
+            "description": {},
+            "url": {
+              "path": [
+                "accountingPeriodStatusLOV"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "Oracle filter expression."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Customer-specific Oracle Cloud instance.",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "26cb9847-7f67-4803-8338-2548da0555a2",
+              "name": "Accounting period status list of values.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accountingPeriodStatusLOV"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Customer-specific Oracle Cloud instance.",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"key_0\": \"string\"\n    },\n    {\n      \"key_0\": 7649.2218822499435,\n      \"key_1\": false,\n      \"key_2\": 8580.720694278656\n    }\n  ],\n  \"count\": 1292,\n  \"hasMore\": true,\n  \"limit\": 171,\n  \"offset\": 1874,\n  \"links\": [\n    {\n      \"rel\": \"string\",\n      \"href\": \"string\",\n      \"name\": \"string\",\n      \"kind\": \"string\"\n    },\n    {\n      \"rel\": \"string\",\n      \"href\": \"string\",\n      \"name\": \"string\",\n      \"kind\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Customer-specific Oracle Cloud instance.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "example",
+      "key": "instance"
+    },
+    {
+      "type": "string",
+      "value": "https://{{instance}}.oraclecloud.com/fscmRestApi/resources/11.13.18.05",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "9f7679e6-1168-4a03-9e10-eaaf43a1b401",
+    "name": "Oracle General Ledger REST Accounting Periods API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Oracle Fusion Cloud General Ledger REST API. Resources are exposed\nunder `/fscmRestApi/resources/11.13.18.05/{resource}` on each\ncustomer's Oracle Cloud instance. Authentication uses HTTP Basic\nAuthentication or OAuth 2.0 Bearer tokens.\n\nThis spec documents the General Ledger surface: journal batches,\nledger balances, currency rates, accounting period status, ledger\noptions, chart of accounts filters, budgetary control, intercompany\ntransactions, and ERP integrations.\n\n\nContact Support:\n Name: Oracle Support",
+      "type": "text/plain"
+    }
+  }
+}

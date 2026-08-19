@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle General Ledger REST Accounting Periods Currency Rates API",
+    "version": "11.13.18.05"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Currency Rates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List currency rates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/currencyRates",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Oracle filter expression."
+              }
+            ]
+          },
+          "docs": "List currency rates"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

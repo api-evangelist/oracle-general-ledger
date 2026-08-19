@@ -1,0 +1,163 @@
+{
+  "item": [
+    {
+      "id": "5754c5eb-4394-4004-8ed2-d08da588e7e8",
+      "name": "Ledger Options",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0643357d-ef2e-4884-9c96-b0bde44b3196",
+          "name": "List ledger options",
+          "request": {
+            "name": "List ledger options",
+            "description": {},
+            "url": {
+              "path": [
+                "fedLedgerOptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Customer-specific Oracle Cloud instance.",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d060e8de-ca00-46e4-8f25-81972727768c",
+              "name": "Ledger options collection.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fedLedgerOptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Customer-specific Oracle Cloud instance.",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"key_0\": \"string\",\n      \"key_1\": 711,\n      \"key_2\": true\n    },\n    {\n      \"key_0\": 5385,\n      \"key_1\": 4202\n    }\n  ],\n  \"count\": 2235,\n  \"hasMore\": false,\n  \"limit\": 3440,\n  \"offset\": 5386,\n  \"links\": [\n    {\n      \"rel\": \"string\",\n      \"href\": \"string\",\n      \"name\": \"string\",\n      \"kind\": \"string\"\n    },\n    {\n      \"rel\": \"string\",\n      \"href\": \"string\",\n      \"name\": \"string\",\n      \"kind\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Customer-specific Oracle Cloud instance.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "example",
+      "key": "instance"
+    },
+    {
+      "type": "string",
+      "value": "https://{{instance}}.oraclecloud.com/fscmRestApi/resources/11.13.18.05",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "05e75617-a168-4607-a7fd-8d2f01edde70",
+    "name": "Oracle General Ledger REST Accounting Periods Ledger Options API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Oracle Fusion Cloud General Ledger REST API. Resources are exposed\nunder `/fscmRestApi/resources/11.13.18.05/{resource}` on each\ncustomer's Oracle Cloud instance. Authentication uses HTTP Basic\nAuthentication or OAuth 2.0 Bearer tokens.\n\nThis spec documents the General Ledger surface: journal batches,\nledger balances, currency rates, accounting period status, ledger\noptions, chart of accounts filters, budgetary control, intercompany\ntransactions, and ERP integrations.\n\n\nContact Support:\n Name: Oracle Support",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle General Ledger REST Accounting Periods Journal Batches API",
+    "version": "11.13.18.05"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Journal Batches",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List journal batches",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/journalBatches",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Oracle filter expression."
+              }
+            ]
+          },
+          "docs": "List journal batches"
+        },
+        {
+          "info": {
+            "name": "Get a journal batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/journalBatches/:JournalBatchesUniqID",
+            "params": [
+              {
+                "name": "JournalBatchesUniqID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a journal batch"
+        },
+        {
+          "info": {
+            "name": "Update a journal batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/journalBatches/:JournalBatchesUniqID",
+            "params": [
+              {
+                "name": "JournalBatchesUniqID",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a journal batch"
+        },
+        {
+          "info": {
+            "name": "Delete a journal batch",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/journalBatches/:JournalBatchesUniqID",
+            "params": [
+              {
+                "name": "JournalBatchesUniqID",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a journal batch"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

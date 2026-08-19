@@ -1,0 +1,173 @@
+{
+  "item": [
+    {
+      "id": "e5488fbc-69bd-4578-9f0c-63f38e981caa",
+      "name": "Ledger Balances",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d7e28a46-4c3d-433a-8302-25a3bd55fce9",
+          "name": "List ledger balances",
+          "request": {
+            "name": "List ledger balances",
+            "description": {},
+            "url": {
+              "path": [
+                "ledgerBalances"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "finder",
+                  "value": "<string>",
+                  "description": "Oracle finder name, e.g. `AccountBalanceByCombinationFinder` or\n`AccountGroupBalanceFinder`.\n"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Customer-specific Oracle Cloud instance.",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e9ab5470-1ffd-40f0-9033-d74b92b88acc",
+              "name": "Ledger balances collection.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ledgerBalances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "finder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Customer-specific Oracle Cloud instance.",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"key_0\": false,\n      \"key_1\": 6187\n    },\n    {\n      \"key_0\": \"string\"\n    }\n  ],\n  \"count\": 6685,\n  \"hasMore\": false,\n  \"limit\": 140,\n  \"offset\": 4412,\n  \"links\": [\n    {\n      \"rel\": \"string\",\n      \"href\": \"string\",\n      \"name\": \"string\",\n      \"kind\": \"string\"\n    },\n    {\n      \"rel\": \"string\",\n      \"href\": \"string\",\n      \"name\": \"string\",\n      \"kind\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Customer-specific Oracle Cloud instance.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "example",
+      "key": "instance"
+    },
+    {
+      "type": "string",
+      "value": "https://{{instance}}.oraclecloud.com/fscmRestApi/resources/11.13.18.05",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4b18d75d-e653-453a-a49c-9ee0652c7869",
+    "name": "Oracle General Ledger REST Accounting Periods Ledger Balances API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Oracle Fusion Cloud General Ledger REST API. Resources are exposed\nunder `/fscmRestApi/resources/11.13.18.05/{resource}` on each\ncustomer's Oracle Cloud instance. Authentication uses HTTP Basic\nAuthentication or OAuth 2.0 Bearer tokens.\n\nThis spec documents the General Ledger surface: journal batches,\nledger balances, currency rates, accounting period status, ledger\noptions, chart of accounts filters, budgetary control, intercompany\ntransactions, and ERP integrations.\n\n\nContact Support:\n Name: Oracle Support",
+      "type": "text/plain"
+    }
+  }
+}

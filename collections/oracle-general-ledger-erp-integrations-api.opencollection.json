@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle General Ledger REST Accounting Periods ERP Integrations API",
+    "version": "11.13.18.05"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ERP Integrations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Submit an ERP integration operation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/erpintegrations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit operations such as `uploadFileToUCM`, `submitESSJobRequest`,\nor `importBulkData`. The actual operation name is supplied in the\nrequest body's `OperationName` field.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

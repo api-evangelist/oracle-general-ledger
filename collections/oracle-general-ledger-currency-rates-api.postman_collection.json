@@ -1,0 +1,173 @@
+{
+  "item": [
+    {
+      "id": "cf227e6b-eddb-4116-88b3-e0461af2a62d",
+      "name": "Currency Rates",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fc03da22-f63c-4589-81a3-109631efd553",
+          "name": "List currency rates",
+          "request": {
+            "name": "List currency rates",
+            "description": {},
+            "url": {
+              "path": [
+                "currencyRates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "Oracle filter expression."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Customer-specific Oracle Cloud instance.",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4e4e35b3-07a1-4f4c-9868-4d59611e7d6a",
+              "name": "Currency rates collection.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "currencyRates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Customer-specific Oracle Cloud instance.",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"key_0\": false\n    },\n    {\n      \"key_0\": 1781.6960343502585,\n      \"key_1\": 1124.7165194986042\n    }\n  ],\n  \"count\": 3928,\n  \"hasMore\": false,\n  \"limit\": 3151,\n  \"offset\": 3211,\n  \"links\": [\n    {\n      \"rel\": \"string\",\n      \"href\": \"string\",\n      \"name\": \"string\",\n      \"kind\": \"string\"\n    },\n    {\n      \"rel\": \"string\",\n      \"href\": \"string\",\n      \"name\": \"string\",\n      \"kind\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Customer-specific Oracle Cloud instance.",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "example",
+      "key": "instance"
+    },
+    {
+      "type": "string",
+      "value": "https://{{instance}}.oraclecloud.com/fscmRestApi/resources/11.13.18.05",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5011a7c4-6a76-4f29-aab2-e169a68de5eb",
+    "name": "Oracle General Ledger REST Accounting Periods Currency Rates API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Oracle Fusion Cloud General Ledger REST API. Resources are exposed\nunder `/fscmRestApi/resources/11.13.18.05/{resource}` on each\ncustomer's Oracle Cloud instance. Authentication uses HTTP Basic\nAuthentication or OAuth 2.0 Bearer tokens.\n\nThis spec documents the General Ledger surface: journal batches,\nledger balances, currency rates, accounting period status, ledger\noptions, chart of accounts filters, budgetary control, intercompany\ntransactions, and ERP integrations.\n\n\nContact Support:\n Name: Oracle Support",
+      "type": "text/plain"
+    }
+  }
+}
