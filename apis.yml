@@ -360,6 +360,8 @@ apis:
   humanURL: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
   baseURL: https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05
   tags:
+  - ERP Integration
+  tags_raw:
   - ERP Integrations
   properties:
   - type: OpenAPI
