@@ -1,14 +1,7 @@
 {
   "provider": "oracle-general-ledger",
   "sources": [
-    "oracle-general-ledger-accounting-periods-api-openapi.yml",
-    "oracle-general-ledger-budgetary-control-api-openapi.yml",
-    "oracle-general-ledger-currency-rates-api-openapi.yml",
-    "oracle-general-ledger-erp-integrations-api-openapi.yml",
-    "oracle-general-ledger-intercompany-api-openapi.yml",
-    "oracle-general-ledger-journal-batches-api-openapi.yml",
-    "oracle-general-ledger-ledger-balances-api-openapi.yml",
-    "oracle-general-ledger-ledger-options-api-openapi.yml"
+    "_original/oracle-general-ledger-openapi.yml"
   ],
   "outputs": [
     "oracle-general-ledger-accounting-periods-api-openapi.yml",
@@ -23,6 +16,19 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "oracle-general-ledger-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "oracle-general-ledger-accounting-periods-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "oracle-general-ledger-budgetary-control-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "oracle-general-ledger-currency-rates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "oracle-general-ledger-erp-integrations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "oracle-general-ledger-intercompany-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "oracle-general-ledger-journal-batches-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "oracle-general-ledger-ledger-balances-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "oracle-general-ledger-ledger-options-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Oracle General Ledger REST Accounting Periods ERP Integrations API
+  title: Oracle General Ledger REST ERP Integrations API
   description: 'Oracle Fusion Cloud General Ledger REST API. Resources are exposed
 
     under `/fscmRestApi/resources/11.13.18.05/{resource}` on each
@@ -16,9 +16,7 @@ info:
 
     options, chart of accounts filters, budgetary control, intercompany
 
-    transactions, and ERP integrations.
-
-    '
+    transactions, and ERP integrations.'
   version: 11.13.18.05
   contact:
     name: Oracle Support
@@ -45,9 +43,7 @@ paths:
 
         or `importBulkData`. The actual operation name is supplied in the
 
-        request body''s `OperationName` field.
-
-        '
+        request body''s `OperationName` field.'
       operationId: submitErpIntegration
       requestBody:
         required: true
